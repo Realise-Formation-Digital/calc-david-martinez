@@ -6,22 +6,24 @@ function ajouteChiffre(form, val) {
 	form.texte.value += val;
 }
 function ajoutePoint(form) {
-	if (form.texte.value.length == 0) {
+	if (form.texte.value.length === 0) {
 		form.texte.value = "0.";
 	}
 	else {
 		var j = 0;
 		for (var i = 0; i < form.texte.value.length; i++) {
-			if (form.texte.value.charAt(i) == ".") {
+			if (form.texte.value.charAt(i) === ".") {
 				j = 1;
 				break;
 			}
 		}
-		(j == 0) ? (form.texte.value += ".")
+		if (j === 0) {
+			(form.texte.value += ".")
+		}
 	}
 }
 function setOp(opType) {
-	if (op == 'null') {
+	if (op === 'null') {
 		op = opType;
 	}
 	else {
@@ -36,20 +38,20 @@ function raz(form) {
 	cpt = 0;
 }
 function store(form) {
-	if ((form.texte.value != "") && (op == 'null') && (cpt == 0))
+	if ((form.texte.value !== "") && (op === 'null') && (cpt === 0))
 	{
 		nb1 = form.texte.value;
 		form.texte.value = "";
 		cpt++;
 	}
-	else if ((form.texte.value != "") && (op != 'null') && (cpt == 1)) {
+	else if ((form.texte.value !== "") && (op !== 'null') && (cpt === 1)) {
 		nb2 = form.texte.value;
 		form.texte.value = "";
 		cpt++;
 	}
 }
 function storeEq(form) {
-	if (cpt == 1) {
+	if (cpt === 1) {
 		store(form);
 	}
 }
@@ -58,17 +60,17 @@ function calc(form) {
 		alert;
 	}
 	else {
-		if (op == "somme") {
+		if (op === "somme") {
 			form.affichage.value = parseInt(nb1) + parseInt(nb2);
 		}
-		else if (op == "soustraction") {
+		else if (op === "soustraction") {
 			form.affichage.value = parseInt(nb1) - parseInt(nb2);
 		}
-		else if (op == "multiplication") {
+		else if (op === "multiplication") {
 			form.affichage.value = nb1 * nb2;
 		}
-		else if (op == "division") {
-			if (nb2 == 0) {
+		else if (op === "division") {
+			if (nb2 === 0) {
 			}
 			else {
 				form.affichage.value = nb1 / nb2;
