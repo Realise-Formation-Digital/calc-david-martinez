@@ -1,0 +1,37 @@
+html {
+	background-color: #f2f7f3;
+	font-family: 'Calibri', Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 100%;
+	text-align: center;
+}
+
+table {
+	background-color: #058316;
+	border-color: #010a00;
+	border-style: solid;
+	border-width: 2px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+td {
+	border-style: double;
+	border-width: 1px;
+	text-align: center;
+}
+
+input[readonly] {
+	text-align: right;
+}
+
+input[type="button"] {
+	padding: 0.2em;
+}
+
+.mainbutton {
+	width: 36px;
+}
+
+input:not(.mainbutton):not([type="text"]) {
+	width: 25px;
+}
