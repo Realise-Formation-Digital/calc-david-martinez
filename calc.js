@@ -2,6 +2,7 @@
 var nb1 = 0, nb2 = 0;
 var op = 'null';
 var cpt = 0;
+
 function ajouteChiffre(form, val) {
 	form.texte.value += val;
 }
